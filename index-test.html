@@ -1,0 +1,3517 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Squares</title>
+    <script type="text/javascript" src="JavaScript/jquery.js"></script>
+    <script type="text/javascript" src="JavaScript/Script.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/Style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+   <!-- <meta name="viewport" content="initial-scale=1.0" /> -->
+   <!-- <meta name="viewport" content="maximum-scale=1.0" /> -->
+    <!--<meta name="viewport" content="user-scalable=no" /> -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+   <!-- <meta name="viewport" content="height=device-height,width=device-width" /> -->
+    <link rel="apple-touch-startup-image" href="Image/icon.png" />
+    <link rel="apple-touch-icon" href="Image/icon.png" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, initial-scale=1.0, minimum-scale=1.0" />
+</head>
+
+<body class="Init">
+
+    <img src="Image/iPhoneBackground.jpg" alt="Background" class="Background" />
+
+    <!------------------------HEADER-------------------------->
+    <div class="Status">
+        <img class="Button" id="ButtonRoom" src="Image/Room.png" alt="Room" />
+        <img class="Button" id="ButtonHome" src="Image/Home.png" alt="Home" />
+        <img class="Button" id="ButtonLock" src="Image/Unlock.png" alt="Security" />
+        <img class="Button" id="ButtonWater" src="Image/Water.png" alt="Water" />
+        <img class="Button" id="ButtonFire" src="Image/Fire.png" alt="Fire" />
+    </div>
+    <!------------------------END HEADER--------------------------->
+
+    <!------------------HOME PAGE------------------------->
+    <div class="HomePage">
+        <span class="FontMedium Right">Home</span>
+        <div class="DateTime">
+            <span id="Time"></span>
+            <br />
+            <span id="Date"></span>
+        </div>
+
+        <div class="Weather">
+
+            <div class="WeatherLeft">
+                <label id="Pressure">Давление: &nbsp <span id="PressureValue"></span>мм.</label>
+                <br />
+                <br />
+                <label id="Humidity">Влажность: &nbsp <span id="HumidityValue"></span>%</label>
+                <br />
+                <br />
+                <label id="SpeedWind">Ветер: &nbsp <span id="SpeedWindValue"></span>м/с</label>
+                <br />
+                <br />
+            </div>
+
+            <div class="WeatherRight">
+                <img id="WeatherSymbol" src="Image/02d.png" alt="Weather" />
+                <br />
+                <label id="Temperature"><span id="TemperatureValue"></span>&deg;C</label>
+            </div>
+
+        </div>
+    </div>
+    <!------------------END HOME PAGE------------------------->
+
+    <!------------------------LIGHTING PAGE--------------------------->
+    <div class="LightingPage">
+        <div class="Room001 Room">
+            <div class="General001  General">
+                <img class="Button HeightWidth145" id="m1-1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="m1-2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="m1-3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="m1-0" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="save" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details001 Details">
+
+                <div title="001D" id="D001" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="002D" id="D002" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 2</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="003D" id="D003" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 3</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="018D" id="D018" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 4</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="021D" id="D021" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 5</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+        <div class="Room002 Room">
+            <div class="General002 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details002 Details">
+                <div title="020S" id="S020" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 3</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room003 Room">
+            <div class="General003  General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details003 Details">
+                <div title="017S" id="S017" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 1</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room004 Room">
+            <div class="General004 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details004 Details">
+                <div title="025S" id="S025" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room005 Room">
+            <div class="General005 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details005 Details">
+                <div title="009D" id="D009" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+        <div class="Room006 Room">
+            <div class="General006 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details006 Details">
+                <div title="010D" id="D010" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="011D" id="D011" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="012D" id="D012" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="0121D" id="D0121" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="028D" id="D028" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+        <div class="Room007 Room">
+            <div class="General007 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details007 Details">
+                <div title="013S" id="S013" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room008 Room">
+            <div class="General008 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details008 Details">
+                <div title="006S" id="S006" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="0061S" id="S0061" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="007S" id="S007" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="008S" id="S008" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room009 Room">
+            <div class="General009 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details009 Details">
+                <div title="004S" id="S004" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="005D" id="D005" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+        <div class="Room010 Room">
+            <div class="General010 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details010 Details">
+                <div title="014D" id="D014" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="016D" id="D016" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="019D" id="D019" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="022D" id="D022" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="023D" id="D023" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="024D" id="D024" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="015D" id="D015" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+        <div class="Room011 Room">
+            <div class="General011 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details011 Details">
+                <div title="104S" id="S104" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room012 Room">
+            <div class="General012 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details012 Details">
+                <div title="027S" id="S027" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="Room013 Room">		
+            <div class="General013 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details013 Details">
+                <div title="026S" id="S026" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="0261S" id="S0261" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room101 Room">
+		
+            <div class="General101 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details101 Details">
+                <div title="1013S" id="S1013" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="L01S" id="SL01" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="L02S" id="SL02" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="L03S" id="SL03" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="1011D" id="D1011" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="1012D" id="D1012" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room102 Room">
+		
+            <div class="General102 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details102 Details">
+                <div title="102S" id="S102" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="1051D" id="D1051" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room103 Room">
+		
+            <div class="General103 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details103 Details">
+                <div title="107D" id="D107" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="108D" id="D108" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="109D" id="D109" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room104 Room">
+		
+            <div class="General104 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details104 Details">
+                <div title="110D" id="D110" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="111D" id="D111" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="112D" id="D112" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="113D" id="D113" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="114D" id="D114" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="116D" id="D116" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="138D" id="D138" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="139D" id="D139" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="140D" id="D140" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="142D" id="D142" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room105 Room">
+		
+            <div class="General105 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details105 Details">
+                <div title="143S" id="S143" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="117D" id="D117" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="118D" id="D118" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room106 Room">
+		
+            <div class="General106 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details106 Details">
+                <div title="120S" id="S120" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="121S" id="S121" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="144S" id="S144" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="119D" id="D119" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="141D" id="D141" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room107 Room">
+		
+            <div class="General107 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details107 Details">
+                <div title="104D" id="D104" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="105D" id="D105" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="106D" id="D106" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room108 Room">
+		
+            <div class="General108 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details108 Details">
+                <div title="125S" id="S125" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                
+            </div>
+        </div>
+		<div class="Room109 Room">
+		
+            <div class="General109 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details109 Details">
+                <div title="126S" id="S126" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="1261S" id="S1261" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="128S" id="S128" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="127D" id="D127" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room110 Room">
+		
+            <div class="General110 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details110 Details">
+                <div title="1311S" id="S1311" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="134S" id="S134" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="131D" id="D131" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="132D" id="D132" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room111 Room">
+		
+            <div class="General111 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details111 Details">
+                <div title="130S" id="S130" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="1301S" id="S1301" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room112 Room">
+		
+            <div class="General112 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details112 Details">
+                <div title="136S" id="S136" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="1351S" id="S1351" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="124S" id="S124" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+                <div title="1241S" id="S1241" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="135D" id="D135" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="137D" id="D137" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room113 Room">
+		
+            <div class="General113 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details113 Details">
+                
+                <div title="1231S" id="S1231" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="124S" id="S124" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="1241S" id="S1241" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="122D" id="D122" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="123D" id="D123" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+        <div class="Room201 Room">
+		
+            <div class="General201 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details201 Details">
+                
+                <div title="201D" id="D201" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room202 Room">
+		
+            <div class="General202 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details202 Details">
+                
+                <div title="224S" id="S224" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="220S" id="S220" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="221S" id="S221" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="216D" id="D216" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="217D" id="D217" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="218D" id="D218" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="219D" id="D219" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room203 Room">
+		
+            <div class="General203 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details203 Details">
+                
+                <div title="222S" id="S222" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="2221S" id="S2221" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="223S" id="S223" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room204 Room">
+		
+            <div class="General204 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details204 Details">
+                
+                <div title="214S" id="S214" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room205 Room">
+		
+            <div class="General205 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details205 Details">
+                
+                <div title="211D" id="D211" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="212D" id="D212" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room206 Room">
+		
+            <div class="General206 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details206 Details">
+                
+                <div title="2121S" id="S2121" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room207 Room">
+		
+            <div class="General207 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details207 Details">
+                
+                <div title="202S" id="S202" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room208 Room">
+		
+            <div class="General208 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details208 Details">
+                
+                <div title="207S" id="S207" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="2071S" id="S2071" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="205D" id="D205" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="206D" id="D206" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="208D" id="D208" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room209 Room">
+		
+            <div class="General209 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details209 Details">
+                
+                <div title="209S" id="S209" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="2091S" id="S2091" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room210 Room">
+		
+            <div class="General210 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details210 Details">
+                
+                <div title="204D" id="D204" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room211 Room">
+		
+            <div class="General211 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details211 Details">
+                
+                <div title="203D" id="D203" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room301 Room">
+		
+            <div class="General301 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details301 Details">
+                
+                <div title="301D" id="D301" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="3011S" id="S3011" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room302 Room">
+		
+            <div class="General302 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details302 Details">
+                <div title="303D" id="D303" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+                <div title="3031S" id="S3031" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="306S" id="S306" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room303 Room">
+		
+            <div class="General303 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details303 Details">
+                
+                <div title="307D" id="D307" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room304 Room">
+		
+            <div class="General304 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details304 Details">
+                
+                <div title="302S" id="S302" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room305 Room">
+		
+            <div class="General305 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details305 Details">
+                
+                <div title="305S" id="S305" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="3051S" id="S3051" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="304D" id="D304" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+            </div>
+        </div>
+		<div class="Room306 Room">
+		
+            <div class="General306 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details306 Details">
+                
+                <div title="308S" id="S308" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="3081S" id="S3081" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+				<div title="309S" id="S309" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label class="Name">Light 2</label>
+                </div>
+            </div>
+        </div>
+		<div class="Room400 Room">
+		
+            <div class="General400 General">
+                <img class="Button HeightWidth145" id="Img1" src="Image/Scene1.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img2" src="Image/Scene2.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img3" src="Image/Scene3.png" alt="as" />
+                <img class="Button HeightWidth145" id="Img4" src="Image/SceneOFF.png" alt="as" />
+                <img class="Button" id="Img5" src="Image/Save.png" alt="as" height="60px" width="295px" />
+            </div>
+            <div class="Details400 Details">
+                <div title="401D" id="D401" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4011D" id="D4011" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="402D" id="D402" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4021D" id="D4021" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="403D" id="D403" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4031D" id="D4031" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="404D" id="D404" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4041D" id="D4041" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="405D" id="D405" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="406D" id="D406" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4061D" id="D4061" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="407D" id="D407" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4071D" id="D4071" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="408D" id="D408" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4081D" id="D4081" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="409D" id="D409" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4091D" id="D4091" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="410D" id="D410" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				<div title="4101D" id="D4101" class="HeightWidth145 Dimmer">
+                    <img class="Button HeightWidth145 DimmerBtn" src="Image/LightOFF.png" alt="Light" />
+                    <label>Light 1</label>
+                    <input type="range" min="0" max="100" step="5" orient='vertical' />
+                </div>
+				
+            </div>
+        </div>
+		
+		<div class="MenuSecond">
+            <div id="LightingGeneral">
+                <img src="Image/SceneDeactive.png" alt="Scene" />
+                <br />
+                <label>СЦЕНЫ</label>
+            </div>
+            <div id="LightingDetails">
+                <img src="Image/DetailsDeactive.png" alt="Details" />
+                <br />
+                <label>ГРУППЫ СВЕТА</label>
+            </div>
+        </div>
+    </div>
+    <!------------------------END LIGHTING PAGE--------------------------->
+
+    <!------------------------BLIND PAGE--------------------------->
+    <div class="BlindPage">
+
+        <div class="Room012 Room">
+            <div class="General012 General">
+                <div title="EP-002_O" id="EP-002_O" class="HeightWidth145">
+                    <img class="Button HeightWidth145" src="Image/GateOPEN.png" alt="" />
+                </div>
+                <div title="EP-002_C" id="EP-002_C" class="HeightWidth145">
+                    <img class="Button HeightWidth145" src="Image/GateCLOSE.png" alt="" />
+                </div>
+                <div title="EP-002_S" id="EP-002_S" class="HeightWidth145">
+                    <img class="Button HeightWidth145" src="Image/BlindSTOP.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="Room013 Room">
+            <div class="General013 General">
+                <div title="EP-001_O" id="EP-001_O" class="HeightWidth145">
+                    <img class="Button HeightWidth145" src="Image/GateOPEN.png" alt="" />
+                </div>
+                <div title="EP-001_C" id="EP-001_C" class="HeightWidth145">
+                    <img class="Button HeightWidth145" src="Image/GateCLOSE.png" alt="" />
+                </div>
+                <div title="EP-001_S" id="EP-001_S" class="HeightWidth145">
+                    <img class="Button HeightWidth145" src="Image/BlindSTOP.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="Room001 Room">
+            <div class="General001 General">
+                <img id="Img12" class="Button HeightWidth145" src="Image/BlindOPEN.png" alt="" />
+                <img id="Img13" class="Button HeightWidth145" src="Image/BlindCLOSE.png" alt="" />
+                <img id="Img14" class="Button HeightWidth145" src="Image/BlindSTOP.png" alt="" />
+            </div>
+
+            <div class="Details001 Details">
+                <img class="Button HeightWidth145" src="Image/BlindUP.png" />
+                <img class="Button HeightWidth145" src="Image/BlindDOWN.png" />
+                <img class="Button HeightWidth145" src="Image/BlindSTOP.png" />
+            </div>
+        </div>
+        <div class="MenuSecond">
+            <div id="BlindGeneral">
+                <img src="Image/CurtainsDeactive.png" alt="Curtains" />
+                <br />
+                <label>ШТОРЫ</label>
+            </div>
+            <div id="BlindDetails">
+                <img src="Image/BlindIconDeactive.png" alt="Blind" />
+                <br />
+                <label>ЖАЛЮЗИ</label>
+            </div>
+        </div>
+
+    </div>
+    <!------------------------END BLIND PAGE--------------------------->
+
+    <!------------------------CLIMATE PAGE--------------------------->
+    <div class="ClimatePage">
+	
+	<div class="Room001 Room">
+			<div class="General001 General">
+                <div class="ClimateControl">
+					<input type="radio" name="cond-mode-z1" value="OFF" id="cond-mode-off-z1" checked="checked"/>
+					<label for="cond-mode-off-z1" class="cond-mode">ВЫКЛ</label>
+					<input type="radio" name="cond-mode-z1" value="AUTO" id="cond-mode-auto-z1"/>
+					<label for="cond-mode-auto-z1" class="cond-mode">АВТО</label>
+					<input type="radio" name="cond-mode-z1" value="MANUAL" id="cond-mode-manual-z1"/>
+					<label for="cond-mode-manual-z1" class="cond-mode">РУЧНОЙ</label>
+				</div>
+
+				<div class="Right">
+					<span id="ACT_TEMP_Z1" title="ACT_TEMP_Z1" class="TempActual">1</span>
+					<span class="TempActual">&deg C</span>
+				</div>
+
+				<span class="FontMedium">УСТАНОВИТЬ </span>
+				<span id="SET_TEMP_Z1" title="SET_TEMP_Z1" class="TempSet">1</span>
+				<span class="TempSet">&deg C</span>
+
+				<img id="tempDec001" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+				<img id="tempInc001" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+            </div>
+            <div class="Details001 Details">
+			
+			</div>
+    </div>	
+	<div class="Room002 Room">
+		<div class="General002 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z2" value="OFF" id="cond-mode-off-z2" checked="checked"/>
+				<label for="cond-mode-off-z2" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z2" value="AUTO" id="cond-mode-auto-z2"/>
+				<label for="cond-mode-auto-z2" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z2" value="MANUAL" id="cond-mode-manual-z2"/>
+				<label for="cond-mode-manual-z2" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z2" title="ACT_TEMP_Z2" class="TempActual">2</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z2" title="SET_TEMP_Z2" class="TempSet">2</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec002" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc002" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details002 Details">
+			
+		</div>
+    </div>
+	<div class="Room003 Room">
+		<div class="General003 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z3" value="OFF" id="cond-mode-off-z3" checked="checked"/>
+				<label for="cond-mode-off-z3" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z3" value="AUTO" id="cond-mode-auto-z3"/>
+				<label for="cond-mode-auto-z3" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z3" value="MANUAL" id="cond-mode-manual-z3"/>
+				<label for="cond-mode-manual-z3" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z3" title="ACT_TEMP_Z3" class="TempActual">3</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z3" title="SET_TEMP_Z3" class="TempSet">3</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec003" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc003" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details003 Details">
+			
+		</div>
+    </div>
+	<div class="Room004 Room">
+		<div class="General004 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z4" value="OFF" id="cond-mode-off-z4" checked="checked"/>
+				<label for="cond-mode-off-z4" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z4" value="AUTO" id="cond-mode-auto-z4"/>
+				<label for="cond-mode-auto-z4" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z4" value="MANUAL" id="cond-mode-manual-z4"/>
+				<label for="cond-mode-manual-z4" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z4" title="ACT_TEMP_Z4" class="TempActual">4</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z4" title="SET_TEMP_Z4" class="TempSet">4</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec004" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc004" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details004 Details">
+			
+		</div>
+    </div>
+	<div class="Room005 Room">
+		<div class="General005 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z5" value="OFF" id="cond-mode-off-z5" checked="checked"/>
+				<label for="cond-mode-off-z5" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z5" value="AUTO" id="cond-mode-auto-z5"/>
+				<label for="cond-mode-auto-z5" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z5" value="MANUAL" id="cond-mode-manual-z5"/>
+				<label for="cond-mode-manual-z5" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z5" title="ACT_TEMP_Z5" class="TempActual">5</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z5" title="SET_TEMP_Z5" class="TempSet">5</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec005" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc005" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details005 Details">
+			
+		</div>
+    </div>
+	<div class="Room006 Room">
+		<div class="General006 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z6" value="OFF" id="cond-mode-off-z6" checked="checked"/>
+				<label for="cond-mode-off-z6" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z6" value="AUTO" id="cond-mode-auto-z6"/>
+				<label for="cond-mode-auto-z6" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z6" value="MANUAL" id="cond-mode-manual-z6"/>
+				<label for="cond-mode-manual-z6" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z6" title="ACT_TEMP_Z6" class="TempActual">6</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z6" title="SET_TEMP_Z6" class="TempSet">6</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec006" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc006" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details006 Details">
+			
+		</div>
+    </div>
+	<div class="Room007 Room">
+		<div class="General007 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z7" value="OFF" id="cond-mode-off-z7" checked="checked"/>
+				<label for="cond-mode-off-z7" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z7" value="AUTO" id="cond-mode-auto-z7"/>
+				<label for="cond-mode-auto-z7" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z7" value="MANUAL" id="cond-mode-manual-z7"/>
+				<label for="cond-mode-manual-z7" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z7" title="ACT_TEMP_Z7" class="TempActual">7</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z7" title="SET_TEMP_Z7" class="TempSet">7</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec007" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc007" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details007 Details">
+			
+		</div>
+    </div>
+	<div class="Room008 Room">
+		<div class="General008 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z8" value="OFF" id="cond-mode-off-z8" checked="checked"/>
+				<label for="cond-mode-off-z8" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z8" value="AUTO" id="cond-mode-auto-z8"/>
+				<label for="cond-mode-auto-z8" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z8" value="MANUAL" id="cond-mode-manual-z8"/>
+				<label for="cond-mode-manual-z8" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z8" title="ACT_TEMP_Z8" class="TempActual">8</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z8" title="SET_TEMP_Z8" class="TempSet">8</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec008" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc008" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details008 Details">
+			
+		</div>
+    </div>
+	<div class="Room009 Room">
+		<div class="General009 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z9" value="OFF" id="cond-mode-off-z9" checked="checked"/>
+				<label for="cond-mode-off-z9" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z9" value="AUTO" id="cond-mode-auto-z9"/>
+				<label for="cond-mode-auto-z9" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z9" value="MANUAL" id="cond-mode-manual-z9"/>
+				<label for="cond-mode-manual-z9" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z9" title="ACT_TEMP_Z9" class="TempActual">9</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z9" title="SET_TEMP_Z9" class="TempSet">9</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec009" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc009" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details009 Details">
+			
+		</div>
+    </div>
+	<div class="Room010 Room">
+		<div class="General010 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z10" value="OFF" id="cond-mode-off-z10" checked="checked"/>
+				<label for="cond-mode-off-z10" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z10" value="AUTO" id="cond-mode-auto-z10"/>
+				<label for="cond-mode-auto-z10" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z10" value="MANUAL" id="cond-mode-manual-z10"/>
+				<label for="cond-mode-manual-z10" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z10" title="ACT_TEMP_Z10" class="TempActual">10</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z10" title="SET_TEMP_Z10" class="TempSet">10</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec010" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc010" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details010 Details">
+			
+		</div>
+    </div>
+	<div class="Room011 Room">
+		<div class="General011 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z11" value="OFF" id="cond-mode-off-z11" checked="checked"/>
+				<label for="cond-mode-off-z11" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z11" value="AUTO" id="cond-mode-auto-z11"/>
+				<label for="cond-mode-auto-z11" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z11" value="MANUAL" id="cond-mode-manual-z11"/>
+				<label for="cond-mode-manual-z11" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z11" title="ACT_TEMP_Z11" class="TempActual">11</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z11" title="SET_TEMP_Z11" class="TempSet">11</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec011" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc011" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details011 Details">
+			
+		</div>
+    </div>
+	<div class="Room012 Room">
+		<div class="General012 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z12" value="OFF" id="cond-mode-off-z12" checked="checked"/>
+				<label for="cond-mode-off-z12" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z12" value="AUTO" id="cond-mode-auto-z12"/>
+				<label for="cond-mode-auto-z12" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z12" value="MANUAL" id="cond-mode-manual-z12"/>
+				<label for="cond-mode-manual-z12" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z12" title="ACT_TEMP_Z12" class="TempActual">12</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z12" title="SET_TEMP_Z12" class="TempSet">12</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec012" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc012" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details012 Details">
+			
+		</div>
+    </div>
+	<div class="Room013 Room">
+		<div class="General013 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z13" value="OFF" id="cond-mode-off-z13" checked="checked"/>
+				<label for="cond-mode-off-z13" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z13" value="AUTO" id="cond-mode-auto-z13"/>
+				<label for="cond-mode-auto-z13" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z13" value="MANUAL" id="cond-mode-manual-z13"/>
+				<label for="cond-mode-manual-z13" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z13" title="ACT_TEMP_Z13" class="TempActual">13</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z13" title="SET_TEMP_Z13" class="TempSet">13</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec013" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc013" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details013 Details">
+			
+		</div>
+    </div>
+	<div class="Room014 Room">
+		<div class="General014 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z14" value="OFF" id="cond-mode-off-z14" checked="checked"/>
+				<label for="cond-mode-off-z14" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z14" value="AUTO" id="cond-mode-auto-z14"/>
+				<label for="cond-mode-auto-z14" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z14" value="MANUAL" id="cond-mode-manual-z14"/>
+				<label for="cond-mode-manual-z14" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z14" title="ACT_TEMP_Z14" class="TempActual">14</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z14" title="SET_TEMP_Z14" class="TempSet">14</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec014" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc014" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details014 Details">
+			
+		</div>
+    </div>
+	<div class="Room015 Room">
+		<div class="General015 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z15" value="OFF" id="cond-mode-off-z15" checked="checked"/>
+				<label for="cond-mode-off-z15" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z15" value="AUTO" id="cond-mode-auto-z15"/>
+				<label for="cond-mode-auto-z15" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z15" value="MANUAL" id="cond-mode-manual-z15"/>
+				<label for="cond-mode-manual-z15" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z15" title="ACT_TEMP_Z15" class="TempActual">15</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z15" title="SET_TEMP_Z15" class="TempSet">15</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec015" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc015" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details015 Details">
+			
+		</div>
+    </div>
+	<div class="Room016 Room">
+		<div class="General016 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z16" value="OFF" id="cond-mode-off-z16" checked="checked"/>
+				<label for="cond-mode-off-z16" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z16" value="AUTO" id="cond-mode-auto-z16"/>
+				<label for="cond-mode-auto-z16" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z16" value="MANUAL" id="cond-mode-manual-z16"/>
+				<label for="cond-mode-manual-z16" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z16" title="ACT_TEMP_Z16" class="TempActual">16</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z16" title="SET_TEMP_Z16" class="TempSet">16</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec016" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc016" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details016 Details">
+			
+		</div>
+    </div>
+	<div class="Room017 Room">
+		<div class="General017 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z17" value="OFF" id="cond-mode-off-z17" checked="checked"/>
+				<label for="cond-mode-off-z17" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z17" value="AUTO" id="cond-mode-auto-z17"/>
+				<label for="cond-mode-auto-z17" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z17" value="MANUAL" id="cond-mode-manual-z17"/>
+				<label for="cond-mode-manual-z17" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z17" title="ACT_TEMP_Z17" class="TempActual">17</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z17" title="SET_TEMP_Z17" class="TempSet">17</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec017" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc017" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details017 Details">
+			
+		</div>
+    </div>
+	<div class="Room018 Room">
+		<div class="General018 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z18" value="OFF" id="cond-mode-off-z18" checked="checked"/>
+				<label for="cond-mode-off-z18" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z18" value="AUTO" id="cond-mode-auto-z18"/>
+				<label for="cond-mode-auto-z18" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z18" value="MANUAL" id="cond-mode-manual-z18"/>
+				<label for="cond-mode-manual-z18" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z18" title="ACT_TEMP_Z18" class="TempActual">18</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z18" title="SET_TEMP_Z18" class="TempSet">18</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec018" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc018" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details018 Details">
+			
+		</div>
+    </div>
+	<div class="Room019 Room">
+		<div class="General019 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z19" value="OFF" id="cond-mode-off-z19" checked="checked"/>
+				<label for="cond-mode-off-z19" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z19" value="AUTO" id="cond-mode-auto-z19"/>
+				<label for="cond-mode-auto-z19" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z19" value="MANUAL" id="cond-mode-manual-z19"/>
+				<label for="cond-mode-manual-z19" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z19" title="ACT_TEMP_Z19" class="TempActual">19</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z19" title="SET_TEMP_Z19" class="TempSet">19</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec019" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc019" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details019 Details">
+			
+		</div>
+    </div>
+	<div class="Room020 Room">
+		<div class="General020 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z20" value="OFF" id="cond-mode-off-z20" checked="checked"/>
+				<label for="cond-mode-off-z20" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z20" value="AUTO" id="cond-mode-auto-z20"/>
+				<label for="cond-mode-auto-z20" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z20" value="MANUAL" id="cond-mode-manual-z20"/>
+				<label for="cond-mode-manual-z20" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z20" title="ACT_TEMP_Z20" class="TempActual">20</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z20" title="SET_TEMP_Z20" class="TempSet">20</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec020" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc020" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details020 Details">
+			
+		</div>
+    </div>
+	<div class="Room021 Room">
+		<div class="General021 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z21" value="OFF" id="cond-mode-off-z21" checked="checked"/>
+				<label for="cond-mode-off-z21" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z21" value="AUTO" id="cond-mode-auto-z21"/>
+				<label for="cond-mode-auto-z21" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z21" value="MANUAL" id="cond-mode-manual-z21"/>
+				<label for="cond-mode-manual-z21" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z21" title="ACT_TEMP_Z21" class="TempActual">21</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z21" title="SET_TEMP_Z21" class="TempSet">21</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec021" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc021" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details021 Details">
+			
+		</div>
+    </div>
+	<div class="Room022 Room">
+		<div class="General022 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z22" value="OFF" id="cond-mode-off-z22" checked="checked"/>
+				<label for="cond-mode-off-z22" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z22" value="AUTO" id="cond-mode-auto-z22"/>
+				<label for="cond-mode-auto-z22" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z22" value="MANUAL" id="cond-mode-manual-z22"/>
+				<label for="cond-mode-manual-z22" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z22" title="ACT_TEMP_Z22" class="TempActual">22</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z22" title="SET_TEMP_Z22" class="TempSet">22</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec022" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc022" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details022 Details">
+			
+		</div>
+    </div>
+	<div class="Room023 Room">
+		<div class="General023 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z23" value="OFF" id="cond-mode-off-z23" checked="checked"/>
+				<label for="cond-mode-off-z23" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z23" value="AUTO" id="cond-mode-auto-z23"/>
+				<label for="cond-mode-auto-z23" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z23" value="MANUAL" id="cond-mode-manual-z23"/>
+				<label for="cond-mode-manual-z23" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z23" title="ACT_TEMP_Z23" class="TempActual">23</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z23" title="SET_TEMP_Z23" class="TempSet">23</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec023" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc023" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details023 Details">
+			
+		</div>
+    </div>
+	<div class="Room024 Room">
+		<div class="General024 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z24" value="OFF" id="cond-mode-off-z24" checked="checked"/>
+				<label for="cond-mode-off-z24" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z24" value="AUTO" id="cond-mode-auto-z24"/>
+				<label for="cond-mode-auto-z24" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z24" value="MANUAL" id="cond-mode-manual-z24"/>
+				<label for="cond-mode-manual-z24" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z24" title="ACT_TEMP_Z24" class="TempActual">24</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z24" title="SET_TEMP_Z24" class="TempSet">24</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec024" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc024" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details024 Details">
+			
+		</div>
+    </div>
+	<div class="Room025 Room">
+		<div class="General025 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z25" value="OFF" id="cond-mode-off-z25" checked="checked"/>
+				<label for="cond-mode-off-z25" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z25" value="AUTO" id="cond-mode-auto-z25"/>
+				<label for="cond-mode-auto-z25" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z25" value="MANUAL" id="cond-mode-manual-z25"/>
+				<label for="cond-mode-manual-z25" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z25" title="ACT_TEMP_Z25" class="TempActual">25</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z25" title="SET_TEMP_Z25" class="TempSet">25</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec025" class="Button HeightWidth145" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc025" class="Button HeightWidth145" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details025 Details">
+			
+		</div>
+    </div>
+	<div class="Room026 Room">
+		<div class="General026 General">
+			<div class="ClimateControl">
+				<input type="radio" name="cond-mode-z26" value="OFF" id="cond-mode-off-z26" checked="checked"/>
+				<label for="cond-mode-off-z26" class="cond-mode">ВЫКЛ</label>
+				<input type="radio" name="cond-mode-z26" value="AUTO" id="cond-mode-auto-z26"/>
+				<label for="cond-mode-auto-z26" class="cond-mode">АВТО</label>
+				<input type="radio" name="cond-mode-z26" value="MANUAL" id="cond-mode-manual-z26"/>
+				<label for="cond-mode-manual-z26" class="cond-mode">РУЧНОЙ</label>
+			</div>
+
+			<div class="Right">
+				<span id="ACT_TEMP_Z26" title="ACT_TEMP_Z26" class="TempActual">26</span>
+				<span class="TempActual">&deg C</span>
+			</div>
+
+			<span class="FontMedium">УСТАНОВИТЬ </span>
+			<span id="SET_TEMP_Z26" title="SET_TEMP_Z26" class="TempSet">26</span>
+			<span class="TempSet">&deg C</span>
+
+			<img id="tempDec026" class="Button HeightWidth265" src="Image/TempDEC.png" alt="DEC" />
+			<img id="tempInc026" class="Button HeightWidth265" src="Image/TempADD.png" alt="INC" />
+		</div>
+		<div class="Details026 Details">
+			
+		</div>
+    </div>
+	
+		<div class="MenuSecond">
+            <div id="ClimateGeneral">
+                <img src="Image/TempDeactive.png" alt="Scene" />
+                <br />
+                <label>ОБЩИЙ</label>
+            </div>
+            <div id="ClimateDetails">
+                <img src="Image/HeatingRoomDeactive.png" alt="Details" />
+                <br />
+                <label>ДЕТАЛИ</label>
+            </div>
+        </div>
+		
+    </div>
+    <!------------------------END CLIMATE PAGE--------------------------->
+
+    <!------------------------WATHER PAGE--------------------------->
+    <div class="WaterPage">
+
+        <div class="General001 General">
+            <span class="Right FontMedium">Датчики Утечки Воды</span>
+
+            <div class="WaterDU">
+                <table>
+                    <tr>
+                        <td>
+                            <img id="DU0-01" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Санузел</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU0-02" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Спа </span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU0-03" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Раздевалка</span><br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU0-04" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Тех. Помещение</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU1-01" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Гостевой санузел</span><br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU1-02" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Детский санузел</span><br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU1-03" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Кухня</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU2-01" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Ванная комната</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU2-02" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Санузел</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DU2-03" src="Image/WaterIconDeactive.png" alt="DUV" /></td>
+                        <td><span class="FontMedium">Гардероб</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="Details001 Details">
+            <span class="FontMedium Right">Водозапорные Клапана</span>
+        </div>
+
+        <div class="MenuSecond">
+
+            <div id="WaterGeneral">
+                <img src="Image/WaterDUDeactive.png" alt="DD" />
+                <br />
+                <label>ДАТЧИКИ</label>
+            </div>
+
+            <div id="WaterDetails">
+                <img src="Image/PlumbingDeactive.png" alt="Water" />
+                <br />
+                <label>ВОДА</label>
+            </div>
+
+        </div>
+
+    </div>
+    <!------------------------END WATHER PAGE--------------------------->
+
+    <!------------------------FIRE PAGE--------------------------->
+    <div class="FirePage">
+        <table>
+            <tr>
+                <td>
+                    <img id="FP" src="Image/Checked.png" alt="Ok" />
+                </td>
+                <td>
+                    <span id="FP_State" class="FontMedium">Пожарная Безопасность</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="FP_AVR" src="Image/Checked.png" alt="Ok" /></td>
+                <td>
+                    <span id="FP_AVR_State" class="FontMedium">Пожарная Система Исправна</span>
+                </td>
+            </tr>
+        </table>
+        <img src="Image/FireRefresh.png" alt="Р В Р’В Р В Р вЂ№Р В Р’В Р вЂ™Р’В±Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р Р‹Р В РЎвЂњ" class="Button" width="300px" />
+    </div>
+    <!------------------------END FIRE PAGE--------------------------->
+
+    <!------------------------SYSTEM PAGE--------------------------->
+    <div class="SystemPage">
+		<div class="General">
+            <select id="videoSelect">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<img id="videoImage" src="Image/icon.png" width="300px" height="260px" />
+        <!--<video class="video-stream" controls="controls" poster="http://192.168.1.52/mjpg/4/video.mjpg" type="video/mjpg; codecs=mjpg"> sad</video>
+-->
+        </div>
+        <div class="Details">
+			
+		</div>
+		
+		<div class="MenuSecond">
+            <div id="SystemGeneral">
+                <img src="Image/CameraDeactive.png" alt="Scene" />
+                <br />
+                <label>КАМЕРЫ</label>
+            </div>
+            <div id="SystemDetails">
+                <img src="Image/HeatingRoomDeactive.png" alt="Details" />
+                <br />
+                <label>СИСТЕМЫ</label>
+            </div>
+        </div>
+		
+    </div>
+    <!------------------------END SYSTEM PAGE--------------------------->
+
+    <!------------------------SECURITY PAGE--------------------------->
+    <div class="SecurityPage">
+
+        <div class="General001 General">
+            <span class="Right FontMedium">Датчики Движения</span>
+
+            <div class="SecurityDD">
+                <table>
+                    <tr>
+                        <td>
+                            <img id="DD0-01" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD0-02" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Гараж 2</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD0-03" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD0-04" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Тех. Помещение</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD0-05" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Холл</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD0-06" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Кинозал</span><br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-01" src="Image/DDDeactive.png" alt="Холл" /></td>
+                        <td><span class="FontMedium">Детская 1</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-02" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Лест. Холл</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-03" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Детская 2</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-04" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Спальня </span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-05" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Прихожая</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-06" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Лестн. Холл</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-07" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Кухня</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-08" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Столовая 2</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-09" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Гостиная 2</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD1-10" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Гостиная-Столовая 1</span>
+                            <br />
+                            "1 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-01" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Спортзал</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-02" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Кабинет</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-03" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Гардероб</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-04" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Лест. Холл</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-05" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Спальня</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-06" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Хоз. Гардероб</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="DD2-07" src="Image/DDDeactive.png" alt="DD" /></td>
+                        <td><span class="FontMedium">Сейф</span>
+                            <br />
+                            "2 этаж"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="Center001 Center">
+            <span class="Right FontMedium">Магнитные Датчики</span>
+
+            <div class="SecurityMKD">
+                <table>
+                    <tr>
+                        <td>
+                            <img id="MKD0-01" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Тех. Помещение</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-02" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">СПА</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-03" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">СПА</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-04" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">СПА</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-05" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Раздевалка</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-06" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Кинозал</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-07" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Кинозал</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-08" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Ворота Гараж 2</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-09" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Ворота Гараж 1</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-10" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-11" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-12" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-13" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD0-14" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гараж 1</span>
+                            <br />
+                            "Цоколь"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-01" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гостиная-Кухня</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-02" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гостиная-Кухня</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-03" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гостиная-Кухня</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-04" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гостиная-Кухня</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-05" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Кухня</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-06" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Детская 1</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-07" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Детская 1</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-08" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Детская 2</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-09" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Детская 2</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD1-10" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Детская 2</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MD1-01" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Спальня</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MD1-02" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Прихожая</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MD1-03" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гостиная</span>
+                            <br />
+                            "1 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-01" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Спортзал</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-02" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Спортзал</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-03" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Спортзал</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-04" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Кабинет</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-05" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гардероб</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-06" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Ванная комната</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-07" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гардероб у спальни</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-08" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Гардероб у спальни</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD2-09" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Спальня</span>
+                            <br />
+                            "2 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD3-01" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Чилл-Аут</span>
+                            <br />
+                            "3 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD3-02" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Библиотека</span>
+                            <br />
+                            "3 Этаж"</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="MKD3-03" src="Image/MKDDeactive.png" alt="MKD" /></td>
+                        <td><span class="FontMedium">Спальня</span>
+                            <br />
+                            "3 Этаж"</td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+
+        <div class="Details Details001">
+			<div class="Button HeightWidth145 button-text"><img src="Image/LockDeactive.png"/><label>Общая ОХРАНА</label></div>
+			<div class="Button HeightWidth145 button-text"><img src="Image/LockActive.png"/><label>Общедомовая ОХРАНА</label></div>
+			<div class="Button HeightWidth145 button-text"><img src="Image/LockDeactive.png"/><label>ОХРАНА участка</label></div>
+			<div class="Button HeightWidth145 button-text"><img src="Image/LockDeactive.png"/><label>ОХРАНА периметра</label></div>
+        </div>
+
+        <div class="MenuSecond">
+
+            <div id="SecurityGeneral">
+                <img src="Image/SecurityIconDeactive.png" alt="ДАТЧИКИ" />
+                <br />
+                <label>ДАТЧИКИ</label>
+            </div>
+
+            <div id="SecurityCenter">
+                <img src="Image/SecurityCenterDeactive.png" alt="MKD" />
+                <br />
+                <label>MKD</label>
+            </div>
+
+            <div id="SecurityDetails">
+                <img src="Image/SecurityDetailsDeactive.png" alt="ОХРАНА" />
+                <br />
+                <label>ОХРАНА</label>
+            </div>
+
+        </div>
+
+    </div>
+    <!------------------------END SECURITY PAGE--------------------------->
+
+    <!------------------------ROOM PAGE--------------------------->
+    <div class="RoomPage">
+        <div id="floor0" class="RoomName">
+            <table class="RoomTable" align="center">
+                <tr>
+                    <td rowspan="2">
+                        <img id="floor0Img" src="Image//Plus.png" alt="Room001" /></td>
+                    <td>
+                        <label id="Label45" class="FloorName">0 FLOOR</label></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div id="RoomsOfFloor0">
+            <div id="room001" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room001.png" alt="Room001" /></td>
+                        <td>
+                            <label id="Label1">Холл</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room002" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room002.png" alt="Room002" /></td>
+                        <td>
+                            <label id="Label2">Подсобное помещение</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room003" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room003.png" alt="Room003" /></td>
+                        <td>
+                            <label id="Label3">Кладовая</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room004" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room004.png" alt="Room004" /></td>
+                        <td>
+                            <label id="Label4">Тех. помещение</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room005" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room005.png" alt="Room005" /></td>
+                        <td>
+                            <label id="Label5">Предбанник</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room006" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room006.png" alt="Room006" /></td>
+                        <td>
+                            <label id="Label6">Спа</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room007" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label7">Сауна</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room008" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label8">Раздевалка</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room009" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label9">Санузел</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room010" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label10">Кинозал</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room011" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label11">Холл полуэтажа</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room012" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label12">Гараж малый</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room013" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label13">Гараж большой</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">Цоколь</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+        </div>
+
+        <div id="floor1" class="RoomName">
+            <table class="RoomTable" align="center">
+                <tr>
+                    <td rowspan="2">
+                        <img id="floor1Img" src="Image//Plus.png" alt="Room001" /></td>
+                    <td>
+                        <label id="Label46" class="FloorName">1 FLOOR</label></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div id="RoomsOfFloor1">
+            <div id="room101" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label14">Прихожая</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room102" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label15">Лестничный холл</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room103" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label16">Санузел</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room104" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label17">Гостинная</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr />
+            <div id="room105" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label18">Столовая</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room106" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label19">Кухня</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room107" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label20">Тамбур</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room108" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label21">Коридор</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room109" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label22">Санузел</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room110" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label23">Детская 1</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room111" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label24">Гардеробная</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room112" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label25">Детская 2</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room113" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label26">Спальня</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">1 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+        </div>
+
+
+        <div id="floor2" class="RoomName">
+            <table class="RoomTable" align="center">
+                <tr>
+                    <td rowspan="2">
+                        <img id="floor2Img" src="Image//Plus.png" alt="Room001" /></td>
+                    <td>
+                        <label id="Label47" class="FloorName">2 FLOOR</label></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div id="RoomsOfFloor2">
+            <div id="room201" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img id="floor2Img" src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label27">Лестничный холл</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room202" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label28">Спальня</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room203" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label29">Гардеробная</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room204" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label30">Спортзал</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room205" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label31">Кабинет</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room206" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label32">Сейфовая</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room207" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label33">Коридор</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room208" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label34">Коридор</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room209" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label35">Санузел</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room211" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label36">Гардеробная</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room212" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label37">Санузел</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room213" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label38">Тамбур</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">2 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+        </div>
+
+        <div id="floor3" class="RoomName">
+            <table class="RoomTable" align="center">
+                <tr>
+                    <td rowspan="2">
+                        <img id="floor3Img" src="Image//Plus.png" alt="Room001" /></td>
+                    <td>
+                        <label id="Label48" class="FloorName">3 FLOOR</label></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div id="RoomsOfFloor3">
+            <div id="room301" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label39">Холл</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">3 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room302" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label40">Библиотека</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">3 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room303" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label41">Чилл аут</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">3 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room304" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label42">Спальня</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">3 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room305" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label43">Санузел</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">3 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+
+            <div id="room306" class="RoomName">
+                <table class="RoomTable" align="center">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="Image//Room007.png" alt="Room007" /></td>
+                        <td>
+                            <label id="Label44">Тех. помещение</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="FloorName">3 Этаж</label></td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+        </div>
+
+        <div id="room400" class="RoomName">
+            <table class="RoomTable" align="center">
+                <tr>
+                    <td rowspan="2">
+                        <img src="Image//Room007.png" alt="Room007" /></td>
+                    <td>
+                        <label id="Label49">GARDEN</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="FloorName">GADEN</label></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+
+
+
+
+
+
+
+    </div>
+    <!------------------------END ROOM PAGE--------------------------->
+
+    <!------------------------FOOTER--------------------------->
+    <div class="Footer">
+        <div id="MenuLighting">
+            <img src="Image/LightDeactive.png" alt="LIGHT" />
+            <br />
+            <label>СВЕТ</label>
+        </div>
+
+        <div id="MenuBlind">
+            <img src="Image/BlindDeactive.png" alt="BLIND" />
+            <br />
+            <label>ШТОРЫ</label>
+        </div>
+
+        <div id="MenuClimate">
+            <img src="Image/ClimateDeactive.png" alt="CLIMATE" />
+            <br />
+            <label>КЛИМАТ</label>
+        </div>
+
+        <div id="MenuSystem">
+            <img src="Image/SecurityDeactive.png" alt="SYSTEM" />
+            <br />
+            <label>СИСТЕМЫ</label>
+        </div>
+
+    </div>
+    <!------------------------END FOOTER--------------------------->
+
+</body>
+
+</html>
+
+

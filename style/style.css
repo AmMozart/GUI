@@ -1,0 +1,603 @@
+@import url(/style/Area-iPad.css) all and (max-width: 1024px);
+@import url(/style/Area-iPhone.css) all and (max-width: 640px);
+
+*{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  color: #c0c0c0;
+}
+
+#bg-image {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.HeightWidth30 {
+  width: 45px;
+  height: 45px;
+}
+
+.button:active {
+  -webkit-box-shadow: inset 0px 0px 100px 10px rgba(0,96,255,0.5);
+  -moz-box-shadow: inset 0px 0px 100px 10px rgba(0,96,255,0.5);
+  box-shadow: inset 0px 0px 100px 10px rgba(0,96,255,0.5);
+}
+
+.dimmer {
+  position: relative;
+}
+
+.dimmer label {
+  position: absolute;
+  left: 60px;
+  bottom: 5px;
+}
+
+.ImageButton:active {
+  position: relative;
+  top: 2px;
+}
+
+#cross,
+#cross-colorpicker {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 59px;
+  height: 59px;
+  background: url(/Image/Cross_OFF.png);
+  z-index: 2;
+}
+
+#cross:active,
+#cross-colorpicker:active {
+  background: url(/Image/Cross_ON.png);
+}
+
+.Details {
+  z-index: 4;
+  position: fixed;
+  width: 96%;
+  height: 80%;
+  border: solid 1px #404040;
+  top: 11%;
+  left: 10px;
+  display: none;
+  overflow-x: none;
+  overflow-y: scroll;
+  background: url(/Image/Fon7.jpg) no-repeat 100% 100%;
+}
+
+.LightSwCtrl {
+  position: relative;
+  width: 130px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 50px 10px 50px;
+}
+
+.LightSwCtrl img {
+  width: 100%;
+  height: 100%;
+}
+
+.DetailsContent {
+  text-align: center;
+}
+
+.DetailsContent h1,
+.DetailsContent h2 {
+  position: relative;
+}
+
+.BlindBox {
+  width: 94px;
+  height: 94px;
+  position: absolute;
+}
+
+.Floor0,
+.Floor1,
+.Floor2,
+.Floor3,
+.Floor4,
+.Floor5,
+.Floor6 {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.Floor1 {display: block;}
+
+.floor-image {
+  z-index: 1;
+  width: auto;
+  height: 100%;
+  position: absolute;
+}
+
+#big-home-floor1 {
+  color: #0ff;
+}
+
+.content-floor-light,
+.content-floor-blind,
+.content-floor-climate,
+.content-floor-water,
+.content-floor-security {
+  position: absolute;
+  z-index: 3;
+  display: none;
+}
+
+.content-floor-light {
+  display: block;
+}
+
+.box {
+  height: 14%;
+  float: left;
+  text-align: center;
+  margin: 1px;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+}
+
+.box img {
+  height: 100%;
+  width: auto;
+}
+
+.MenuFloor {
+  position: relative;
+  float: right;
+  height: 100%;
+  z-index: 3;
+  width: 20%;
+}
+
+#area2{
+  display: none;
+}
+
+.TextButton {
+  position: relative;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.TextButton img {
+  position: absolute;
+  height: 95%;
+  width: 90%;
+}
+
+.TextButton label {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+
+.DetaislMaster {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+
+.SceneButton {
+  position: relative;
+  height: 60px;
+  width: 220px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.SceneButton img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+.SceneButton label {
+  position: absolute;
+  top: 35%;
+  left: 28%;
+}
+
+#content {
+  display: none;
+  margin: 0 10px;
+  height: 600px;
+  width: 100%;
+}
+
+.camera,
+.fire{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  background: -webkit-linear-gradient(top, #000, #151515);
+  background: -moz-linear-gradient(top, #000, #151515);
+  background: -ms-linear-gradient(top, #000, #151515);
+  background: -o-linear-gradient(top, #000, #151515);
+  width: 98%;
+  height: 90%;
+  z-index: 2;
+  overflow-y: auto;
+  overflow-x: none; 
+}
+
+.camera video{
+  width: 48%;
+  height: 25%;
+  margin: 0 2px;
+}
+
+.FloorPage,
+.HomePage {
+  position: relative;
+  z-index: 2;
+  display: none;
+  height: 86%;
+}
+
+.HomePage {
+  display: block;
+  margin: 10px;
+}
+
+.FloorPage {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.FloorImage {
+  float: left;
+  height: 100%;
+  width: 79%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.Status {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  height: 10%;
+  text-align: center;
+  margin: 0 10px;
+  min-height: 56px;
+}
+
+.Status > div {
+  height: 100%;
+}
+
+#FP_State,
+#FP_StateAVR {
+  color: #00FF5a;
+}
+
+.Status img {
+  width: 56px;
+  height: 56px;
+}
+
+#Time {
+  color: rgba(200, 200, 200, 0.9);
+  font: 28px Verdana solid;
+}
+
+#Date {
+  color: rgba(220, 220, 220, 1.0);
+  font: 18px Verdana solid;
+}
+
+.DateTime {
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+#WeatherBlock {
+  position: relative;
+  height: 100%;
+  width: auto;
+}
+
+#WeatherBlock > img{
+  height: 100%;
+  width: 100%;
+}
+
+.WeatherLeft {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  text-align: left;
+}
+
+.WeatherRight {
+  height: 90%;
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#WeatherSymbol {
+  width: auto;
+  height: 100%;
+}
+
+#Pressure,
+#Humidity,
+#SpeedWind {
+  font: 14px Verdana solid white;
+  background: rgba(0, 0, 0, 0.50);
+  padding: 7px;
+  border-radius: 10px;
+  color: #0f0;
+}
+
+#Temperature {
+  font: 22px Verdana solid white;
+}
+
+.Footer {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  height: 10%;
+  width: 100%;
+}
+.Footer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.Footer div {
+  display: inline-block;
+  position: relative;
+  width: 15%;
+  height: 100%;
+  margin: 0 5px;
+}
+.Footer div img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.Footer div label {
+  text-align: center;
+  position: relative;
+  top:  20%;
+}
+
+.FooterContent {
+  z-index: 3;
+  width: 100%;
+  height: 8%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #000;
+}
+  .FooterContent div {
+    width: 24.8%;
+    height: 100%;
+    text-align: center;
+    float: left;
+  }
+  .FooterContent div:active {
+    box-shadow: 0 0 10px rgba(255,255,255,0.7);
+  }
+    .FooterContent div img {
+      height: 20px;
+      width: auto;
+    }
+    .FooterContent div label {
+      font: 12px Verdana solid white;
+      color: #00FFFF;
+    }
+
+.TempActual {
+  font: italic 16px Arial;
+  color: #ff6a00;
+}
+
+.TempSet {
+  font: italic 16px Arial;
+  color: white;
+  color: #ff6a00;
+}
+
+.FontMedium {
+  font: normal 10px Verdana;
+  color: #ff6a00;
+}
+
+.white-color {
+  float: right;
+  margin: 60px 10px 10px 0;
+  border: 0;
+}
+
+.colorpicker {
+  background: url(/Image/Fon7.jpg) no-repeat 100% 100%;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 2px 2px 2px #444444;
+  color: #FFFFFF;
+  font-size: 12px;
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  width: 460px;
+  z-index: 100;
+  display:none;
+}
+  .colorpicker h2,
+  .colorpicker h3 {
+    text-align: center;
+  }
+
+#picker {
+  cursor: crosshair;
+  float: left;
+  margin: 10px;
+  border: 0;
+  width: 300px;
+}
+
+.preview {
+  background: url(/Image/select.png) no-repeat scroll center center transparent;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px #444444;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  position: relative;
+  margin-left: 45px;
+}
+
+.rs-range-color {
+  background-color: #FFFF00;
+}
+
+.rs-path-color {
+  background-color: #C2E9F7;
+}
+ .rs-handle {
+  background-color: #C2E9F7;
+  padding: 7px;
+  border: 2px solid #C2E9F7;
+}
+
+.rs-handle.rs-focus {
+  border-color: #33B5E5;
+}
+ .rs-handle:after {
+  border-color: #33B5E5;
+  background-color: #33B5E5;
+}
+ .rs-border {
+  border-color: transparent;
+}
+ .rs-bg-color{
+  background-color: black;
+}
+
+#ButtonFloor{
+  display: none;
+}
+
+.turnDeviceNotification {
+  background-color: #000;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  background-image: url(/Image/turnDevice.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1024px){
+  .Footer{font-size: 10px;}
+  .HomePage label{font-size: 12px;}
+}
+
+@media screen and (max-width: 640px){
+  #WeatherBlock{display: none;}
+  .DateTime{display: none;}
+  .FloorImage {
+    height: 100%;
+    width: 79%;
+  }
+  #content {
+    height: 430px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .MenuFloor {
+    background-color: #000;
+    position: fixed;
+    left: 4%;
+    top: 10%;
+    width: 100%;
+    display: none;
+  }
+  .TextButton img {
+    width: 90%;
+  }
+  .DetaislMaster {
+    position: relative;
+  }
+  #cross,
+  #cross-colorpicker {
+    top: 10px;
+    right: 10px;
+    position: fixed;
+  }
+  .colorpicker {
+    position: fixed;
+    top: 0;
+    left: 3%;
+    width: 96%;
+    height: 99%;
+    overflow-x: none;
+    overflow-y: scroll;
+  }
+  .Details {
+    position: fixed;
+    top: 0;
+    left: 3%;
+    width: 96%;
+    height: 99%;
+  }
+}
+
+@media screen and (max-width: 750px) and (min-width: 480px) and (orientation: landscape) {
+  .turnDeviceNotification{display: block;}
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+  .turnDeviceNotification{display: block;}
+}

@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>House Dynamics</title>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="Image/HomeLighting.png">
+  <link rel="apple-touch-startup-image" href="Image/HomeLighting.png">
+  <link rel="apple-touch-icon" href="Image/HomeLighting.png">
+  <link rel="stylesheet" href="style/roundslider.css">
+</head>
+<body>
+  <img src="Image/Fon7.jpg" alt="" id="bg-image">
+  <div class="Status">
+    <div class="left">
+      <img class="button" id="ButtonArea" src="Image/Area1.png" alt="Room">
+      <img class="button" id="ButtonFloor" src="Image/Floor.png" alt="Floor">
+      <img class="button" id="ButtonHome" src="Image/Home.png" alt="Home">
+      <img class="button" id="ButtonLock" src="Image/Unlock.png" alt="Security">
+      <img class="button" id="ButtonWater" src="Image/Water.png" alt="Water">
+      <img class="button" id="ButtonFire" src="Image/Fire.png" alt="Fire">
+    </div>
+    <div class="DateTime">
+      <span id="Time"></span><br>
+      <span id="Date"></span>
+    </div>
+    <div class="button right" id="WeatherBlock">
+      <img src="Image/Block.png" alt="Weather">
+      <div class="WeatherLeft">
+        <label id="Pressure">Давление: &nbsp;<span id="PressureValue"></span>мм.</label><br>
+        <label id="Humidity">Влажность: &nbsp;<span id="HumidityValue"></span>%</label><br>
+        <label id="SpeedWind">Ветер: &nbsp;<span id="SpeedWindValue"></span>м/с</label>
+      </div>
+      <div class="WeatherRight">
+        <label id="Temperature"><span id="TemperatureValue"></span>&deg;C</label>
+        <img id="WeatherSymbol" src="Image/02d.png" alt="Weather">
+      </div>
+    </div>
+  </div>
+  <div class="HomePage">
+    <div id="SecurityGeneralBtn" class="box Button">
+      <img src="Image/HomeSecurity.png" alt="БЕЗОПАСНОСТЬ"><br><label>ОХРАНА</label>
+    </div>
+    <div id="WaterGeneralBtn" class="box Button">
+      <img src="Image/HomeWater.png" alt="ВОДА"><br><label>ВОДА</label>
+    </div>
+    <div id="CameraGeneralBtn" class="box Button" >
+      <img src="Image/HomeCamera.png" alt="КАМЕРЫ"><br><label>КАМЕРЫ</label>
+    </div>
+    <!--<div class="box Button" >
+      <img  src="Image/HomeAudio.png"  alt="ЗВУК"><br/><label>ЗВУК</label>
+    </div>
+    <div class="box Button">
+      <img src="Image/HomeVideo.png"alt="ВИДЕО"><br/><label>ВИДЕО</label>
+    </div>-->
+    <div id="LightGeneralBtn" class="box Button" >
+      <img src="Image/HomeLighting.png" alt="СВЕТ"><br><label>СВЕТ</label>
+    </div>
+    <div id="ClimateGeneralBtn" class="box Button">
+      <img src="Image/HomeTemperature.png" alt="КЛИМАТ"><br><label>КЛИМАТ</label>
+    </div>
+    <div id="SettingsGeneralBtn" class="box Button">
+      <img src="Image/HomeSettings.png" alt="НАСТРОЙКИ"><br><label>НАСТРОЙКИ</label>
+    </div>
+    <div id="BlindGeneralBtn" class="box Button">
+      <img src="Image/HomeBlind.png" alt="ШТОРЫ"><br><label>ШТОРЫ</label>
+    </div>
+    <div class="Footer">
+      <img src="Image/footer1.png" alt="">
+      <div class="button">
+        <img src="Image/Block.png" alt=""><label>Выкл<br> Свет</label>
+      </div>
+      <div class="button" id="blindCLOSE">
+        <img src="Image/Block.png" alt=""><label>Закр<br> Шторы</label>
+      </div>
+      <div class="button">
+        <img src="Image/Block.png" alt=""><label>Выкл<br> Вода</label>
+      </div>
+      <div class="button">
+        <img src="Image/Block.png" alt=""><label>Мы<br> Уехали</label>
+      </div>
+      <div class="button">
+        <img src="Image/Block.png" alt=""><label>Мы<br> Приехали</label>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="Details">
+      <div id="cross"></div>
+      <div class="DetailsContent" id="details-lighting013">
+        <h1>Гараж 1</h1>
+        <h2>Освещение</h2>
+        <div title="026S" id="S026" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Люстра</label>
+        </div>
+        <div title="0261S" id="S0261" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Точечный свет"><label>Точечный свет</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m013-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m013-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m013-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m013-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting012">
+        <h1>Гараж 2</h1>
+        <h2>Освещение</h2>
+        <div title="027S" id="S027" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Люстра</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m012-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m012-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m012-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m012-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting008">
+        <h1>Санузел Раздевалка</h1>
+        <h2>Освещение</h2>
+        <div title="006S" id="S006" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Люстра</label>
+        </div>
+        <div title="0061S" id="S0061" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Точечный свет"><label>Точечный свет</label>
+        </div>
+        <div title="007S" id="S007" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Точечный свет"><label>Точечный свет</label>
+        </div>
+        <div title="008S" id="S008" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Люстра</label>
+        </div>
+        <div title="004S" id="S004" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Люстра</label>
+        </div>
+        <div title="005D" id="D005" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m008-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m008-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m008-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m008-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting006">
+        <h1>СПА Сауна Предбанник</h1>
+        <h2>Освещение</h2>
+        <div title="013S" id="S013" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Люстра</label>
+        </div>
+        <div title="009D" id="D009" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="011D" id="D011" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="010D" id="D010" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="012D" id="D012" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="0121D" id="D0121" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="028D" id="D028" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m006-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m006-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m006-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m006-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting001">
+        <h1>Холл</h1>
+        <h2>Освещение</h2>
+        <div title="003D" id="D003" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="103D" id="D103" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="020S" id="S020" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Освещение</label>
+        </div>
+        <div title="021D" id="D021" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="018D" id="D018" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="002D" id="D002" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="001D" id="D001" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m001-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m001-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m001-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m001-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting010">
+        <h1>Кинозал</h1>
+        <h2>Освещение</h2>
+        <div title="015D" id="D015" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Точечный свет</label>
+          <div class="preview"></div>
+        </div>
+        <div title="023D" id="D023" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="019D" id="D019" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="014D" id="D014" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="024D" id="D024" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="022D" id="D022" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="016D" id="D016" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсветка</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m010-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m010-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m010-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m010-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting110">
+        <h1>Детская</h1>
+        <h2>Освещение</h2>
+        <div title="134S" id="S134" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1311S" id="S1311" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="132D" id="D132" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="131D" id="D131" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m110-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m110-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m110-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m110-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting112">
+        <h1>Детская</h1>
+        <h2>Освещение</h2>
+        <div title="136S" id="S136" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="124S" id="S124" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1241S" id="S1241" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1351S" id="S1351" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="137D" id="D137" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="135D" id="D135" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m112-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m112-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m112-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m112-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting109">
+        <h1>Санузел Коридор Гардероб</h1>
+        <h2>Освещение</h2>
+        <div title="130S" id="S130" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1301S" id="S1301" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="126S" id="S126" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1261S" id="S1261" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="128S" id="S128" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="127D" id="D127" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="125D" id="D125" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Коридор</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m109-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m109-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m109-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m109-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting113">
+        <h1>Спальня</h1>
+        <h2>Освещение</h2>
+        <div title="1231S" id="S1231" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="124S" id="S124z" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1241S" id="S1241z" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="123D" id="D123" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="122D" id="D122" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m113-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m113-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m113-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m113-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting107">
+        <h1>Тамбур</h1>
+        <h2>Освещение</h2>
+        <div title="104D" id="D104" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="105D" id="D105" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="106D" id="D106" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m107-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m107-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m107-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m107-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting101">
+        <h1>Прихожая</h1>
+        <h2>Освещение</h2>
+        <div title="1012S" id="S1012" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1011D" id="D1011" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="1013D" id="D1013" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m101-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m101-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m101-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m101-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting106">
+        <h1>Кухня</h1>
+        <h2>Освещение</h2>
+        <div title="120S" id="S120" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="121S" id="S121" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="144S" id="S144" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="141D" id="D141" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="119D" id="D119" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m106-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m106-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m106-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m106-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting105">
+        <h1>Столовая</h1>
+        <h2>Освещение</h2>
+        <div title="143S" id="S143" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="118D" id="D118" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="117D" id="D117" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m105-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m105-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m105-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m105-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting104">
+        <h1>Гостиная</h1>
+        <h2>Освещение</h2>
+        <div title="115S" id="S115" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="139D" id="D139" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="138D" id="D138" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="110D" id="D110" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="140D" id="D140" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="113D" id="D113" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="114D" id="D114" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="116D" id="D116" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="142D" id="D142" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="111D" id="D111" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="112D" id="D112" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="115D" id="D115" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m104-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m104-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m104-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m104-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting103">
+        <h1>Санузел</h1>
+        <h2>Освещение</h2>
+        <div title="102S" id="S102" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="1051D" id="D1051" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="107D" id="D107" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="109D" id="D109" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="108D" id="D108" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m103-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m103-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m103-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m103-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting203">
+        <h1>Гардероб</h1>
+        <h2>Освещение</h2>
+        <div title="222S" id="S222" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="2221S" id="S2221" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="223S" id="S223" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m203-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m203-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m203-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m203-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting202">
+        <h1>Спальня</h1>
+        <h2>Освещение</h2>
+        <div title="220S" id="S220" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="224S" id="S224" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="221S" id="S221" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="216D" id="D216" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="218D" id="D218" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="219D" id="D219" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="217D" id="D217" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m202-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m202-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m202-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m202-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting209">
+        <h1>Гардероб</h1>
+        <h2>Освещение</h2>
+        <div title="209S" id="S209" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="2091S" id="S2091" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m209-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m209-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m209-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m209-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting208">
+        <h1>Санузел</h1>
+        <h2>Освещение</h2>
+        <div title="207S" id="S207" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="2071S" id="S2071" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="208D" id="D208" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="204D" id="D204" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="205D" id="D205" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="203D" id="D203" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="206D" id="D206" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m208-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m208-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m208-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m208-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting205">
+        <h1>Кабинет</h1>
+        <h2>Освещение</h2>
+        <div title="211D" id="D211" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div title="212D" id="D212" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>RGBW</label>
+          <div class="preview"></div>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m205-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m205-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m205-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m205-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting204">
+        <h1>Санузел</h1>
+        <h2>Освещение</h2>
+        <div title="214S" id="S214" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m204-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m204-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m204-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m204-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting302">
+        <h1>Библиотека</h1>
+        <h2>Освещение</h2>
+        <div title="306S" id="S306" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="3031S" id="S3031" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="3011S" id="S3011" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="301D" id="D301" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="302D" id="D302" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Спальня</label>
+        </div>
+        <div title="303D" id="D303" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div title="307D" id="D307" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Чилл-аут</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m302-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m302-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m302-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m302-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-lighting305">
+        <h1>Санузел</h1>
+        <h2>Освещение</h2>
+        <div title="305S" id="S305" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="3051S" id="S3051" class="LightSwCtrl">
+          <img class="ImageButton" src="Image/LightSwControl_OFF.png" alt="Люстра"><label>Светильник</label>
+        </div>
+        <div title="304D" id="D304" class="LightSwCtrl">
+          <div class="dimmer"></div><label>Подсобное помещение</label>
+        </div>
+        <div class="DetaislMaster">
+          <div id="m305-0d" class="button SceneButton">
+            <img src="Image/Block.png" alt="ОТКЛЮЧИТЬ"><label>ОТКЛЮЧИТЬ</label>
+          </div>
+          <div id="m305-1d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 1</label>
+          </div>
+          <div id="m305-2d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 2"><label>СЦЕНАРИЙ 2</label>
+          </div>
+          <div id="m305-3d" class="button SceneButton">
+            <img src="Image/Block.png" alt="СЦЕНАРИЙ 1"><label>СЦЕНАРИЙ 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="DetailsContent" id="details-blind013">
+        <h1>Гараж 1</h1>
+        <h2>Шторы</h2>
+      </div>
+      <div class="DetailsContent" id="details-climate013">
+        <h1>Гараж 1</h1>
+        <h2>Климат</h2>
+      </div>
+    </div>
+    <div class="FloorPage">
+      <div class="FloorImage">
+        <div class="Floor0">
+          <div class="area area013"></div>
+          <div class="area area012"></div>
+          <div class="area area010"></div>
+          <div class="area area008"></div>
+          <div class="area area006"></div>
+          <div class="area area001"></div>
+          <img src="Image/Floor0.png" alt="Floor 0" class="floor-image">
+          <div class="content-floor-light">
+            <div class="Master Master013">
+              <img class="button HeightWidth30" id="m013-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m013-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m013-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m013-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master012">
+              <img class="button HeightWidth30" id="m012-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master004">
+              <img class="button HeightWidth30" id="m004-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master001">
+              <img class="button HeightWidth30" id="m001-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m001-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m001-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m001-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master010">
+              <img class="button HeightWidth30" id="m010-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m010-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m010-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m010-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master006">
+              <img class="button HeightWidth30" id="m006-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m006-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m006-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m006-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master011">
+              <img class="button HeightWidth30" id="m011-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master002">
+              <img class="button HeightWidth30" id="m002-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master003">
+              <img class="button HeightWidth30" id="m003-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master007">
+              <img class="button HeightWidth30" id="m007-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master005">
+              <img class="button HeightWidth30" id="m005-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master008">
+              <img class="button HeightWidth30" id="m008-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master009">
+              <img class="button HeightWidth30" id="m009-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+          </div>
+          <div class="content-floor-blind">
+            <div class="BlindBox BlindBox012">
+              <div title="EP-002_O" id="EP-012_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-012_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-012_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox013">
+              <div title="EP-002_O" id="EP-013_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-013_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-013_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="content-floor-climate">
+            <div class="ClimateBox ClimateBox010">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z010" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z010" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec010" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc010" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+          </div>
+          <div class="content-floor-water">
+            <img class="DU HeightWidth30" id="DU0-01" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU0-02" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU0-03" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU0-04" src="Image/WaterIconDeactive.png" alt="DUV">
+          </div>
+          <div class="content-floor-security">
+            <img class="DD HeightWidth30" id="DD0-01" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD0-02" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD0-03" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD0-04" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD0-05" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD0-06" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD0-07" src="Image/DDDeactive.png" alt="DD">
+            <img class="MKD HeightWidth30" id="MKD0-01" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-02" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-03" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-04" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-05" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-06" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-07" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-08" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-09" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-10" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-11" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-12" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-13" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD0-14" src="Image/MKDDeactive.png" alt="MKD">
+          </div>
+        </div>
+        <div class="Floor1">
+          <div class="area area110"></div>
+          <div class="area area109"></div>
+          <div class="area area112"></div>
+          <div class="area area113"></div>
+          <div class="area area107"></div>
+          <div class="area area101"></div>
+          <div class="area area103"></div>
+          <div class="area area106"></div>
+          <div class="area area105"></div>
+          <div class="area area104"></div>
+          <img src="Image/Floor1.png" alt="Floor 1" class="floor-image">
+          <div class="content-floor-light">
+            <div class="Master Master110">
+              <img class="button HeightWidth30" id="m110-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m110-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m110-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m110-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master112">
+              <img class="button HeightWidth30" id="m112-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m112-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m112-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m112-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master113">
+              <img class="button HeightWidth30" id="m113-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m113-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m113-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m113-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master106">
+              <img class="button HeightWidth30" id="m106-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m106-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m106-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m106-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master105">
+              <img class="button HeightWidth30" id="m105-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m105-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m105-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m105-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master104">
+              <img class="button HeightWidth30" id="m104-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m104-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m104-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m104-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master111">
+              <img class="button HeightWidth30" id="m111-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master109">
+              <img class="button HeightWidth30" id="m109-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master108">
+              <img class="button HeightWidth30" id="m108-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master107">
+              <img class="button HeightWidth30" id="m107-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master102">
+              <img class="button HeightWidth30" id="m102-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master101">
+              <img class="button HeightWidth30" id="m101-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master103">
+              <img class="button HeightWidth30" id="m103-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+          </div>
+          <div class="content-floor-blind">
+            <div class="BlindBox BlindBox110">
+              <div title="EP-002_O" id="EP-110_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-110_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-110_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox112">
+              <div title="EP-002_O" id="EP-112_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-112_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-112_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox113">
+              <div title="EP-002_O" id="EP-113_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-113_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-113_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox106">
+              <div title="EP-002_O" id="EP-106_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-106_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-106_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox105">
+              <div title="EP-002_O" id="EP-105_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-105_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-105_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox104">
+              <div title="EP-002_O" id="EP-104_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-104_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-104_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="content-floor-climate">
+            <div class="ClimateBox ClimateBox110">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z110" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z110" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec110" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc110" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox112">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z112" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z112" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec112" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc112" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox113">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z113" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z113" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec113" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc113" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox106">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z106" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z106" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec106" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc106" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox104">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z104" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z104" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec104" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc104" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+          </div>
+          <div class="content-floor-water">
+            <img class="DU HeightWidth30" id="DU1-01" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU1-02" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU1-03" src="Image/WaterIconDeactive.png" alt="DUV">
+          </div>
+          <div class="content-floor-security">
+            <img class="DD HeightWidth30" id="DD1-01" src="Image/DDDeactive.png" alt="Холл">
+            <img class="DD HeightWidth30" id="DD1-02" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-03" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-04" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-05" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-06" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-07" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-08" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-09" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD1-10" src="Image/DDDeactive.png" alt="DD">
+            <img class="MKD HeightWidth30" id="MKD1-01" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-02" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-03" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-04" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-05" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-06" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-07" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-08" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-09" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD1-10" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MD1-01" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MD1-02" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MD1-03" src="Image/MKDDeactive.png" alt="MKD">
+          </div>
+        </div>
+        <div class="Floor2">
+          <div class="area area203"></div>
+          <div class="area area202"></div>
+          <div class="area area208"></div>
+          <div class="area area209"></div>
+          <div class="area area205"></div>
+          <div class="area area204"></div>
+          <img src="Image/Floor2.png" alt="Floor 2" class="floor-image">
+          <div class="content-floor-light">
+            <div class="Master Master203">
+              <img class="button HeightWidth30" id="m203-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m203-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m203-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m203-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master202">
+              <img class="button HeightWidth30" id="m202-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m202-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m202-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m202-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master208">
+              <img class="button HeightWidth30" id="m208-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m208-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m208-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m208-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master209">
+              <img class="button HeightWidth30" id="m209-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m209-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m209-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m209-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master205">
+              <img class="button HeightWidth30" id="m205-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m205-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m205-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m205-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master204">
+              <img class="button HeightWidth30" id="m204-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m204-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m204-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m204-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master201">
+              <img class="button HeightWidth30" id="m201-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master207">
+              <img class="button HeightWidth30" id="m207-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master210">
+              <img class="button HeightWidth30" id="m210-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master211">
+              <img class="button HeightWidth30" id="m211-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master206">
+              <img class="button HeightWidth30" id="m206-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+          </div>
+          <div class="content-floor-blind">
+            <div class="BlindBox BlindBox202">
+              <div title="EP-002_O" id="EP-202_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-2002_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-202_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox205">
+              <div title="EP-002_O" id="EP-205_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-205_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-205_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox204a">
+              <div title="EP-002_O" id="EP-204a_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-204a_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-204a_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox204b">
+              <img class="button HeightWidth30" src="Image/BlindUP.png" alt="">
+              <img class="button HeightWidth30" src="Image/BlindDOWN.png" alt="">
+              <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+            </div>
+          </div>
+          <div class="content-floor-climate">
+            <div class="ClimateBox ClimateBox202">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z202" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z202" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec202" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc202" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox204">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z204" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z204" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec204" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc204" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox205">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z205" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z205" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec205" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc205" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+          </div>
+          <div class="content-floor-water">
+            <img class="DU HeightWidth30" id="DU2-01" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU2-02" src="Image/WaterIconDeactive.png" alt="DUV">
+            <img class="DU HeightWidth30" id="DU2-03" src="Image/WaterIconDeactive.png" alt="DUV">
+          </div>
+          <div class="content-floor-security">
+            <img class="DD HeightWidth30" id="DD2-01" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD2-02" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD2-03" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD2-04" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD2-05" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD2-06" src="Image/DDDeactive.png" alt="DD">
+            <img class="DD HeightWidth30" id="DD2-07" src="Image/DDDeactive.png" alt="DD">
+
+            <img class="MKD HeightWidth30" id="MKD2-01" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-02" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-03" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-04" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-05" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-06" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-07" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-08" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD HeightWidth30" id="MKD2-09" src="Image/MKDDeactive.png" alt="MKD">
+          </div>
+        </div>
+        <div class="Floor3">
+          <div class="area area302"></div>
+          <div class="area area305"></div>
+          <img src="Image/Floor3.png" alt="Floor 3" class="floor-image">
+          <div class="content-floor-light">
+            <div class="Master Master302">
+              <img class="button HeightWidth30" id="m302-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m302-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m302-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m302-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="Master Master305">
+              <img class="button HeightWidth30" id="m305-1" src="Image/Scene1.png" alt="as">
+              <img class="button HeightWidth30" id="m305-2" src="Image/Scene2.png" alt="as">
+              <img class="button HeightWidth30" id="m305-3" src="Image/Scene3.png" alt="as">
+              <img class="button HeightWidth30" id="m305-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master306">
+              <img class="button HeightWidth30" id="m306-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master304">
+              <img class="button HeightWidth30" id="m304-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+            <div class="MasterONOFF Master303">
+              <img class="button HeightWidth30" id="m303-0" src="Image/SceneOFF.png" alt="as">
+            </div>
+          </div>
+          <div class="content-floor-blind">
+            <div class="BlindBox BlindBox303">
+              <div title="EP-002_O" id="EP-303_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-303_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-303_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox304">
+              <div title="EP-002_O" id="EP-304_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-304_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-304_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+            <div class="BlindBox BlindBox302">
+              <div title="EP-002_O" id="EP-302_O" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateOPEN.png" alt="">
+              </div>
+              <div title="EP-002_C" id="EP-302_C" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/GateCLOSE.png" alt="">
+              </div>
+              <div title="EP-002_S" id="EP-302_S" class="HeightWidth30">
+                <img class="button HeightWidth30" src="Image/BlindSTOP.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="content-floor-climate">
+            <div class="ClimateBox ClimateBox303">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z303" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z303" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec303" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc303" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+            <div class="ClimateBox ClimateBox304">
+              <div>
+                <span class="FontMedium">В КОМНАТЕ</span>
+                <span id="ACT_TEMP_Z304" title="ACT_TEMP_Z1" class="TempActual">21</span>
+                <span class="TempActual">&deg;</span>
+              </div>
+              <div>
+                <span class="FontMedium">УСТАНОВИТЬ</span>
+                <span id="SET_TEMP_Z304" title="SET_TEMP_Z1" class="TempSet">23</span>
+                <span class="TempSet">&deg;</span>
+              </div>
+              <img id="tempDec304" class="button HeightWidth30" src="Image/TempDEC.png" alt="DEC">
+              <img id="tempInc304" class="button HeightWidth30" src="Image/TempADD.png" alt="INC">
+            </div>
+          </div>
+          <div class="content-floor-water">
+            <img class="DU HeightWidth30" id="DU3-01" src="Image/WaterIconDeactive.png" alt="DUV">
+          </div>
+          <div class="content-floor-security">
+            <img class="MKD" id="MKD3-01" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD" id="MKD3-02" src="Image/MKDDeactive.png" alt="MKD">
+            <img class="MKD" id="MKD3-03" src="Image/MKDDeactive.png" alt="MKD">
+          </div>
+        </div>
+        <div class="Floor4">
+          <img src="Image/Floor0.jpg" alt="Floor 4" class="floor-image">
+        </div>
+        <div class="Floor5">
+          <img src="Image/Floor1.jpg" alt="Floor 5" class="floor-image">
+        </div>
+        <div class="Floor6">
+          <img src="Image/Floor2.jpg" alt="Floor 6" class="floor-image">
+        </div>
+      </div>
+      <div class="MenuFloor">
+        <div id="area1">
+          <div class="button TextButton" id="big-home-floor0">
+            <img src="Image/Block.png" alt="Floor 6"><label>0 ЭТАЖ</label>
+          </div>
+          <div class="button TextButton" id="big-home-floor1">
+            <img src="Image/Block.png" alt="Floor 6"><label>1 ЭТАЖ</label>
+          </div>
+          <div class="button TextButton" id="big-home-floor2">
+            <img src="Image/Block.png" alt="Floor 6"><label>2 ЭТАЖ</label>
+          </div>
+          <div class="button TextButton" id="big-home-floor3">
+            <img src="Image/Block.png" alt="Floor 6"><label>3 ЭТАЖ</label>
+          </div>
+        </div>
+        <div id="area2">
+          <div class="button TextButton" id="small-home-floor1">
+            <img src="Image/Block.png" alt="Floor 6"><label>1 ЭТАЖ</label>
+          </div>
+          <div class="button TextButton" id="small-home-floor2">
+            <img src="Image/Block.png" alt="Floor 6"><label>2 ЭТАЖ</label>
+          </div>
+        </div>
+        <div class="button TextButton" id="garden">
+          <img src="Image/Block.png" alt="Floor 6"><label>УЛИЦА</label>
+        </div>
+      </div>
+    </div>
+    <div class="FooterContent">
+      <div id="MenuLighting">
+        <img src="Image/LightActive.png" alt="LIGHT"><br><label>СВЕТ</label>
+      </div>
+      <div id="MenuBlind">
+        <img src="Image/BlindDeactive.png" alt="BLIND"><br><label>ШТОРЫ</label>
+      </div>
+      <div id="MenuClimate">
+        <img src="Image/ClimateDeactive.png" alt="CLIMATE"><br><label>КЛИМАТ</label>
+      </div>
+      <div id="MenuSystem">
+        <img src="Image/SecurityDeactive.png" alt="SYSTEM"><br><label>СИСТЕМЫ</label>
+      </div>
+    </div>
+  </div>
+  <div class="camera">
+    <video poster="/image/icon.png" controls="controls" style="cursor: pointer;">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video> 
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video> 
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video> 
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video>
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video> 
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video>
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video> 
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video>
+    <video poster="/image/icon.png" controls="controls">
+      <source src="gizmo.mp4" type="video/mp4" />
+      <source src="gizmo.webm" type="video/webm" />
+      <source src="gizmo.ogv" type="video/ogg" />
+      Video not playing? <a href="gizmo.mp4">Download file</a> instead.
+    </video> 
+  </div>
+  <div class="fire">
+    <table>
+      <tr>
+        <td>
+            <img id="FP" src="Image/Checked.png" alt="Ok" />
+        </td>
+        <td>
+            <span id="FP_State" class="FontMedium">Пожарная Безопасность</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <img id="FP_AVR" src="Image/Checked.png" alt="Ok" /></td>
+        <td>
+            <span id="FP_AVR_State" class="FontMedium">Пожарная Система Исправна</span>
+        </td>
+      </tr>
+    </table>
+    <img src="Image/FireRefresh.png" alt="Сброс" class="button" width="300px" />
+  </div>
+  <div class="colorpicker">
+    <div id="cross-colorpicker"></div>
+    <h2>Выбор Цвета</h2>
+    <canvas id="picker" width="300px" height="300px"></canvas>
+    <div class="dimmer white-color"></div>
+    <h3>Белый Цвет</h3>
+  </div>
+  <div class="turnDeviceNotification"></div>
+  <script src="JavaScript/jquery.js"></script>
+  <script src="JavaScript/roundslider.js"></script>
+  <script src="JavaScript/ScriptPad.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+</body>
+</html>
