@@ -223,15 +223,15 @@ html, body {
   left: 28%;
 }
 
-#content {
+.content {
   display: none;
   margin: 0 10px;
   height: 600px;
   width: 100%;
 }
 
-.camera,
-.fire{
+.camera-page,
+.fire-page{
   display: none;
   position: absolute;
   left: 0;
@@ -247,21 +247,21 @@ html, body {
   overflow-x: none; 
 }
 
-.camera video{
+.camera-page video{
   width: 48%;
   height: 25%;
   margin: 0 2px;
 }
 
 .FloorPage,
-.HomePage {
+.home-page {
   position: relative;
   z-index: 2;
   display: none;
   height: 86%;
 }
 
-.HomePage {
+.home-page {
   display: block;
   margin: 10px;
 }
@@ -286,7 +286,7 @@ html, body {
   float: right;
 }
 
-.Status {
+.status {
   position: relative;
   left: 0;
   top: 0;
@@ -297,7 +297,7 @@ html, body {
   min-height: 56px;
 }
 
-.Status > div {
+.status > div {
   height: 100%;
 }
 
@@ -306,7 +306,7 @@ html, body {
   color: #00FF5a;
 }
 
-.Status img {
+.status img {
   width: 56px;
   height: 56px;
 }
@@ -457,7 +457,7 @@ html, body {
   border: 0;
 }
 
-.colorpicker {
+.color-box {
   background: url(/Image/Fon7.jpg) no-repeat 100% 100%;
   border-radius: 5px 5px 5px 5px;
   box-shadow: 2px 2px 2px #444444;
@@ -470,8 +470,8 @@ html, body {
   z-index: 100;
   display:none;
 }
-  .colorpicker h2,
-  .colorpicker h3 {
+  .color-box h2,
+  .color-box h3 {
     text-align: center;
   }
 
@@ -526,7 +526,7 @@ html, body {
   display: none;
 }
 
-.turnDeviceNotification {
+.turn-device-notification {
   background-color: #000;
   z-index: 100;
   position: fixed;
@@ -542,7 +542,7 @@ html, body {
 
 @media screen and (max-width: 1024px){
   .Footer{font-size: 10px;}
-  .HomePage label{font-size: 12px;}
+  .home-page label{font-size: 12px;}
 }
 
 @media screen and (max-width: 640px){
@@ -552,7 +552,7 @@ html, body {
     height: 100%;
     width: 79%;
   }
-  #content {
+  .content {
     height: 430px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -577,7 +577,7 @@ html, body {
     right: 10px;
     position: fixed;
   }
-  .colorpicker {
+  .color-box {
     position: fixed;
     top: 0;
     left: 3%;
@@ -596,8 +596,8 @@ html, body {
 }
 
 @media screen and (max-width: 750px) and (min-width: 480px) and (orientation: landscape) {
-  .turnDeviceNotification{display: block;}
+  .turn-device-notification{display: block;}
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
-  .turnDeviceNotification{display: block;}
+  .turn-device-notification{display: block;}
 }
