@@ -1,5 +1,5 @@
-@import url(/style/Area-iPad.css) all and (max-width: 1024px);
-@import url(/style/Area-iPhone.css) all and (max-width: 640px);
+@import url(/style/area-iPad.css) all and (max-width: 1024px);
+@import url(/style/area-iPhone.css) all and (max-width: 640px);
 
 *{
   -webkit-touch-callout: none;
@@ -31,6 +31,10 @@ html, body {
 .HeightWidth30 {
   width: 45px;
   height: 45px;
+}
+
+.button-fire{
+  width: 100%;
 }
 
 .button:active {
