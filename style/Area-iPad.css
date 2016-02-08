@@ -6,7 +6,8 @@
 
 .DU,
 .DD,
-.MKD {
+.MKD,
+.HF {
   position: absolute;
 }
 
@@ -25,7 +26,6 @@
 .BlindBox div {
   display: inline-block;
 }
-
 
 .Master {
   width: 95px;
@@ -603,7 +603,7 @@
 
 .ClimateBox202 {
   left: 140px;
-  top: 150px;
+  top: 130px;
 }
 
 .ClimateBox204 {
@@ -910,4 +910,94 @@
 .Master306 {
   left: 260px;
   top: 430px;
+}
+
+#HF0-01{
+  left: 500px;
+  top: 250px;
+}
+
+#HF0-02{
+  left: 500px;
+  top: 110px;
+}
+
+#HF0-03{
+  left: 650px;
+  top: 430px;
+}
+
+#HF0-04{
+  left: 630px;
+  top: 30px;
+}
+
+#HF0-05{
+  left: 720px;
+  top: 200px;
+}
+
+#HF0-06{
+  left: 650px;
+  top: 285px;
+}
+
+#HF1-01{
+  left: 400px;
+  top: 285px;
+}
+
+#HF1-02{
+  left: 480px;
+  top: 285px;
+}
+
+#HF1-03{
+  left: 120px;
+  top: 285px;
+}
+
+#HF1-04{
+  left: 420px;
+  top: 500px;
+}
+
+#HF1-05{
+  left: 290px;
+  top: 560px;
+}
+
+#HF1-06{
+  left: 290px;
+  top: 30px;
+}
+
+#HF2-01{
+  left: 150px;
+  top: 220px;
+}
+
+#HF2-02{
+  left: 580px;
+  top: 350px;
+}
+
+#HF2-03{
+  left: 150px;
+  top: 400px;
+}
+
+#HF2-04{
+  left: 150px;
+  top: 500px;
+}
+
+#HF3-01{
+  left: 300px;
+  top: 340px;
+}
+
+#HF3-02{
+  left: 230px;
+  top: 490px;
 }

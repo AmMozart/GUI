@@ -8,27 +8,30 @@ var deviceNumber = 0;
 var System = {
   Lighting: {value:0, name:"Lighting"},
   Blind: {value:1, name:"Blind"},
-  Climate: {value:2, name:"Climate"}
+  Climate: {value:2, name:"Climate"},
+  System: {value:3, name:"System"}
 };
 var _semafor = true;
 var state = [];
-var SingleLoad;
-var Masters;
+var SingleLoad, Masters;
 var area = 1;
 var lastCommand = 0;
 var count = 0;
 var SwitchLoads = [
-'S115', 'S026', 'S0261', 'S006','D001', 'D002', 'D003', 'S004', 'D005',
-'D104', 'S0061', 'S007', 'S008', 'D009', 'D010', 'D011', 'D012', 'D0121', 'S013', 'D014',
-'D015', 'D016', 'S017', 'D018', 'D019', 'S020', 'D021', 'D022', 'D023', 'D024', 'S025',
-'S027', 'D028','SL01','SL02','SL03','D1011','S102','D1051','D107','D109','D110','D111',
-'D112','D113','D114','D116','D138','D139','D140','D142','S143','D117','D118','S120','S121',
-'S144','D119','D141','D105','D106','S126','S1261','S128','D127','S1311','S134','D131',
-'D132','S130','S1301','S136','S1351','S124','S1241','D135', 'D125', 'D137', 'D1013', 'S1012',
-'S1231','S124','S1241','D122','D123','D201','S224','S220','S221','D216','D217','D218','D219',
-'S222','S2221','S223','S214','D211','D212','S202','S207','S2071','D205','D206','D208','S209',
-'S2091','D204','D203','D301','S3011','D302', 'D303','S3031','S306','D307','S305','S3051','D304',
-'S308','S3081','D4101'];
+'S115', 'S026', 'S0261', 'S006', 'D003', 'S004',
+'S0061', 'S007', 'S008', 'D012', 'D0121', 'S013',
+'D014', 'D015', 'D019', 'D022', 'D023', 'D024',
+'D028', 'SL01', 'SL02','SL03','D1011','S102','D111',
+'D112','D142','S143','D117','S120','S121',
+'S144', 'S126','S1261','S128','S1311','S134',
+'S130', 'S1301', 'S136','S1351','S124','S1241', 'D125', 'S1012',
+'S1231', 'S124', 'S1241', 'D122','D201','S224','S220','S221','D217',
+'S222', 'S2221', 'S223', 'S214','D211','D212','S202','S207','S2071','D206','S209',
+'S2091', 'S3011','S3031','S306','S305','S3051',
+'S308', 'S3081', 'D4101', 'HF0-01', 'HF0-02', 'HF0-03', 'HF0-04', 'HF0-05', 'HF0-06',
+'HF1-01', 'HF1-02', 'HF1-03', 'HF1-04', 'HF1-05', 'HF1-06', 
+'HF2-01', 'HF2-02', 'HF2-03', 'HF2-04',
+'HF3-01', 'HF3-02'];
 var DimmerLoads = [
 'D001', 'D002', 'D003', 'D005', 'D009', 'D010', 'D011', 'D012', 'D0121',
 'D014','D015', 'D016', 'D018', 'D019', 'D021', 'D022', 'D023', 'D024', 'D028','D1011','D1051',
@@ -84,6 +87,15 @@ function getDataFile() {
   $.get("/data/masters.txt", function(data) {
     Masters = data.split('\n');
   });
+  timeCicle = setInterval(function(){
+    if(SingleLoad == undefined && Masters == undefined)
+      ;
+      else
+      {
+        Control(getIndex("r"), 100);
+        clearInterval(timeCicle);
+      }
+  }, 1000);
 }
 
 function getIndex(Name) {
@@ -109,7 +121,11 @@ function initControl() {
   count = 0;
   for (var i = 0; i < SwitchLoads.length -1; i++)
   {
-    state[getIndex($("#" + SwitchLoads[i]).attr('title'))] > 0 ? $("img", $("#" + SwitchLoads[i])).prop("src", "Image/LightSwControl_ON.png") : $("img", $("#" + SwitchLoads[i])).prop("src", "Image/LightSwControl_OFF.png");
+    var loadSrc = $("img", "#" + SwitchLoads[i]).attr('src');
+    if(loadSrc){
+      var beginString = loadSrc.split('_')[0];
+      state[getIndex($("#" + SwitchLoads[i]).attr('title'))] > 0 ? $("img", $("#" + SwitchLoads[i])).prop("src", beginString + "_ON.png") : $("img", $("#" + SwitchLoads[i])).prop("src", beginString + "_OFF.png");
+    }
   }
   for (var i = 0; i < DimmerLoads.length -1; i++) {
     $(".dimmer", $("#" + DimmerLoads[i])).roundSlider("setValue", (state[getIndex($("#" + DimmerLoads[i]).attr('title'))] / 2.55));
@@ -591,6 +607,15 @@ $(document).ready(function (){
         $(".camera-page").css("display", "block");
       }
   });
+  $("#SystemGeneralBtn").on({
+      'click':function(){
+        $(".content").css("display", "block");
+        $(".home-page").css("display", "none");
+        $(".FloorPage").css("display", "block");
+        $("#MenuSystem").trigger('click');
+        changeIcon();
+      }
+  });
   $("#big-home-floor0").on({
     'click':function(){
       HiddeFloor();
@@ -693,13 +718,17 @@ $(document).ready(function (){
       'click': function () {
         var value = 0;
         var index = getIndex($(this).parent().attr('title'));
+        var loadSrc = $(this).attr('src');
+        if(loadSrc){
+          var beginString = loadSrc.split('_')[0];
+        }
         if (state[index] > 0) {
           state[index] = value = 0;
-          $(this).prop("src", "Image/LightSwControl_OFF.png");
+          $(this).prop("src", beginString + "_OFF.png");
         }
         else {
           state[index] = value = 100;
-          $(this).prop("src", "Image/LightSwControl_ON.png");
+          $(this).prop("src", beginString + "_ON.png");
         }
         Control(index, value);
       }
@@ -897,9 +926,12 @@ $(document).ready(function (){
   });
   $("#MenuSystem").on({
     'click': function () {
+      systemNumber = System.System.value;
       MenuReset();
       $(this).find('img').prop("src", "Image/SecurityActive.png");
       $(this).find('label').css("color", "#00ff50");
+      HiddeSystem();
+      $(".content-floor-system").css("display", "block");
     }
   });
   $("#ButtonHome").on({
@@ -946,6 +978,7 @@ $(document).ready(function (){
       MenuReset();
       HiddePage();
       $(".content").css("display", "none");
+      $(".home-page").css("display", "block");
     }
   });
   $("#ButtonFloor").on({
